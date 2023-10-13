@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Horros movies</title>
+    <title>Books Library</title>
     <link rel="stylesheet" type="text/css" href="/styles.css">
 </head>
 <body>
-    <h1>The conjuring universe 🎥 👹</h1>
+    <h1>Chris's Library 📚</h1>
     <ul>
-        <% movies.forEach(function(movie) { %>
+        <% books.forEach(function(book) { %>
             <li>
-                <h3><%= movie.name %></h3>
-                <h3>(<%= movie.year %>)</h3>
-                <img src="<%= movie.poster %>" alt="<%= movie.name %> Poster">
-                <p><%= movie.description %></p>
+                <h3 class="title"><%= book.title %></h3>
+                <h3 class="year">(<%= book.year %>)</h3>
+                <img src="<%= book.cover %>" alt="<%= book.title %> Cover">
+                <p><%= book.description %></p>
             </li>
         <% }); %>
     </ul>

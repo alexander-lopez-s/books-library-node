@@ -2,58 +2,43 @@ import express from 'express';
 
 const app = express();
 
-const movies = [
+const books = [
     {
-      name: 'The Conjuring',
-      year: 2013,
-      poster: 'https://m.media-amazon.com/images/M/MV5BMTM3NjA1NDMyMV5BMl5BanBnXkFtZTcwMDQzNDMzOQ@@._V1_.jpg',
-      description: 'The Conjuring is a 2013 American supernatural horror film directed by James Wan and written by Chad Hayes and Carey W. Hayes.'
+      title: 'To Kill a Mockingbird',
+      author: 'Harper Lee',
+      year: 1960,
+      cover: 'https://epqkkxb65h3.exactdn.com/wp-content/uploads/2023/02/m-2908.jpg',
+      description: 'To Kill a Mockingbird is a novel by Harper Lee published in 1960. It is a classic of modern American literature.'
     },
     {
-      name: 'Anabelle',
-      year: 2014,
-      poster: 'https://fr.web.img5.acsta.net/pictures/19/05/29/12/09/4290749.jpg',
-      description: 'Annabelle movies are a series of three Warner Bros films set in James Wans The Conjuring universe.'
+      title: 'Wuthuring Heights',
+      author: 'Emily Brontë',
+      year: 1847,
+      cover: 'https://mpd-biblio-covers.imgix.net/9781466805743.jpg',
+      description: '1Wuthering Heights is the first and only novel by the English author Emily Brontë, initially published in 1847 under her pen name "Ellis Bell".'
     },
     {
-      name: 'The Nun',
-      year: 2018,
-      poster: 'https://m.media-amazon.com/images/M/MV5BMjM3NzQ5NDcxOF5BMl5BanBnXkFtZTgwNzM4MTQ5NTM@._V1_.jpg',
-      description: 'In 1956 France, a priest is violently murdered, and Sister Irene begins to investigate. She once again comes face-to-face with a powerful evil.'
-    },
-    {
-      name: 'The devil made me',
-      year: 2021,
-      poster: 'https://m.media-amazon.com/images/I/415e-df8XGL.jpg',
-      description: 'Paranormal investigators Ed and Lorraine Warren take on one of the most sensational cases of their careers after a cop stumbles...'
-    },
-    {
-        name: 'The Nun II',
-        year: 2023,
-        poster: 'https://i.pinimg.com/originals/0d/bb/b7/0dbbb7a410564d4acc77c05d7a9764ef.jpg',
-        description: 'In 1956 France, a priest is violently murdered, and Sister Irene begins to investigate. She once again comes face-to-face with a powerful evil.'
-      },
-    {
-        name: 'Insiduos',
-        year: 2023,
-        poster: 'https://m.media-amazon.com/images/M/MV5BMjdlZjI4YTEtNjgzZi00NTA1LWIwZWYtMDc0MzhjOWNlYjcxXkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_.jpg',
-        description: 'Josh Lambert heads east to drop his son, Dalton, off at school. However, Daltons college dream soon becomes a living nightmare when..'
-    },
-  ];
-  
+      title: 'Pride and Prejudice',
+      author: 'Jane Austen',
+      year: 1813,
+      cover: 'https://m.media-amazon.com/images/M/MV5BMTA1NDQ3NTcyOTNeQTJeQWpwZ15BbWU3MDA0MzA4MzE@._V1_.jpg',
+      description: 'Pride and Prejudice is a novel by Jane Austen published in 1813. It is a romantic classic that explores social class and marriage.'
+    }
+];
+
 // Set the view engine to EJS
 app.set('view engine', 'ejs');
 
 // Body parse
 app.use(express.json());
-app.use(express.urlencoded({extended : true}));
+app.use(express.urlencoded({ extended: true }));
 
 // Create static files from the public directory
 app.use(express.static('public'));
 
 // Route for the home page
 app.get('/', (req, res) => {
-    res.render('index', { movies });
+    res.render('index', { books });
 });
 
 // Route for handling errors 404
