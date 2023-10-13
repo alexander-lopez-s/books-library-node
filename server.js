@@ -32,7 +32,13 @@ const movies = [
         year: 2023,
         poster: 'https://i.pinimg.com/originals/0d/bb/b7/0dbbb7a410564d4acc77c05d7a9764ef.jpg',
         description: 'In 1956 France, a priest is violently murdered, and Sister Irene begins to investigate. She once again comes face-to-face with a powerful evil.'
-      }
+      },
+    {
+        name: 'Insiduos',
+        year: 2023,
+        poster: 'https://m.media-amazon.com/images/M/MV5BMjdlZjI4YTEtNjgzZi00NTA1LWIwZWYtMDc0MzhjOWNlYjcxXkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_.jpg',
+        description: 'Josh Lambert heads east to drop his son, Dalton, off at school. However, Daltons college dream soon becomes a living nightmare when..'
+    },
   ];
   
 // Set the view engine to EJS
